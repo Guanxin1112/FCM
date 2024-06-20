@@ -9,7 +9,7 @@ library(fda)
 filepathfun = '~/Functions/'
 source(paste(filepathfun,'three_step.R',sep=''))
 source(paste(filepathfun,'prediction.R',sep=''))
-source(paste(filepathfun,'datasim',sep=''))
+source(paste(filepathfun,'datasim.R',sep=''))
 
 
 # sample size
@@ -22,8 +22,11 @@ h1 = c(0.3*(2000/n)^(-1/5),0.2*(2000/n)^(-1/5));
 h2 = c(0.12*(2000/n)^(-1/5),0.12*(2000/n)^(-1/5))
 
 # result output
-mse_est_beta1f = mse_est_beta2f = mse_est_beta3f = rep(0, nsim)
+mse_est_beta1f = mse_est_beta2f = mse_est_beta3f = mse_est_beta4f = rep(0, nsim)
+mse_est_beta1fKer = mse_est_beta2fKer = mse_est_beta3fKer = mse_est_beta4fKer = rep(0, nsim)
 mse_est_g1f = mse_est_g2f = rep(0, nsim)
+mse_est_g1fKer = mse_est_g2fKer = rep(0, nsim)
+
 
 
 for(ns in 1:nsim){
@@ -45,3 +48,16 @@ for(ns in 1:nsim){
   mse_est_g1fKer[ns] = sqrt(mean((g[,1] - LKer$gnewlp[,1])^2))
   mse_est_g2fKer[ns] = sqrt(mean((g[,2] - LKer$gnewlp[,2])^2))
 }
+
+mean(mse_est_beta1f);sd(mse_est_beta1f)
+mean(mse_est_beta2f);sd(mse_est_beta2f)
+mean(mse_est_beta3f);sd(mse_est_beta3f)
+mean(mse_est_g1f);sd(mse_est_g1f)
+mean(mse_est_g2f);sd(mse_est_g2f)
+
+mean(mse_est_beta1fKer);sd(mse_est_beta1fKer)
+mean(mse_est_beta2fKer);sd(mse_est_beta2fKer)
+mean(mse_est_beta3fKer);sd(mse_est_beta3fKer)
+mean(mse_est_g1fKer);sd(mse_est_g1fKer)
+mean(mse_est_g2fKer);sd(mse_est_g2fKer)
+
