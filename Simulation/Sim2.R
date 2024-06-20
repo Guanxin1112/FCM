@@ -24,7 +24,7 @@ theta = 0
 alpha = 0.05
 
 
-
+PC = rep(NA,nsim)
 for(ns in 1:nsim){
   Dat = vadata2(n, theta)
   Y=Dat$Y;X=Dat$X;Z=Dat$Z;Beta=Dat$Beta;U=Dat$U;g=Dat$g
@@ -54,3 +54,5 @@ for(ns in 1:nsim){
   PC[ns] = as.numeric(max(abs(est_Beta12 - beta2) * (1 / sd_Beta12)) > C12)
   
 }
+
+sum(PC) / nsim 
