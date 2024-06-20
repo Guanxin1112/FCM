@@ -52,12 +52,14 @@ for(ns in 1:nsim){
 mean(mse_est_beta1f);sd(mse_est_beta1f)
 mean(mse_est_beta2f);sd(mse_est_beta2f)
 mean(mse_est_beta3f);sd(mse_est_beta3f)
+mean(mse_est_beta4f);sd(mse_est_beta4f)
 mean(mse_est_g1f);sd(mse_est_g1f)
 mean(mse_est_g2f);sd(mse_est_g2f)
 
 mean(mse_est_beta1fKer);sd(mse_est_beta1fKer)
 mean(mse_est_beta2fKer);sd(mse_est_beta2fKer)
 mean(mse_est_beta3fKer);sd(mse_est_beta3fKer)
+mean(mse_est_beta4fKer);sd(mse_est_beta4fKer)
 mean(mse_est_g1fKer);sd(mse_est_g1fKer)
 mean(mse_est_g2fKer);sd(mse_est_g2fKer)
 
